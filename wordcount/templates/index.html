@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>word cout</title>
+    <style>
+        a {
+        text-align :right;
+        }
+    </style>
+</head>
+<body>
+
+<h1> welcome to word count</h1>
+<a href= "{% url 'contact' %}">COntact us</a>
+
+
+<form action="{% url  'count' %}">
+    <textarea name="fulltextarea" cols=40 rows=10 required>
+
+    </textarea>
+    <input type="submit" value="Count!"/>
+</form>
+
+</body>
+</html>
