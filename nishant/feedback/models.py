@@ -8,3 +8,19 @@ class Feedback(models.Model):
     def __str__(self):
         feebck=self.name+","+self.email+","+self.feedback
         return feebck
+
+
+class contact(models.Model):
+    name=models.CharField(max_length=50)
+    contact_no=models.IntegerField()
+    email=models.EmailField()
+    question=models.TextField()
+    def __str__(self):
+        return self.name + "," +self.email
+
+
+class subscription(models.Model):
+    email=models.EmailField()
+
+    def __str__(self):
+        return self.email

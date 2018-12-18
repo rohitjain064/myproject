@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="icon" href="nishant.jpg">
+  {% load static %}
+  <link rel="icon" href="static/nishant.jpg">
   <!-- Theme Made By www.w3schools.com -->
   <title>Bravo's midnyt express</title>
   <meta charset="utf-8">
@@ -335,6 +336,7 @@ We provide fresh modern cuisine and beverages in a unique environment with frien
       <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
       <li data-target="#myCarousel" data-slide-to="1"></li>
       <li data-target="#myCarousel" data-slide-to="2"></li>
+        <li data-target="#myCarousel" data-slide-to="3"></li>
     </ol>
 
     <!-- Wrapper for slides -->
@@ -347,6 +349,10 @@ We provide fresh modern cuisine and beverages in a unique environment with frien
       </div>
       <div class="item">
         <h4>"Great offers on take away... biryani was tasty... with little spices...provide best burger ever had which is fully filled with mayo....love with burgerr"<br><span>Divya Nahar, Zomato user</span></h4>
+      </div>
+    </div>
+    <div class="item">
+        <h4>"{{ feedback.feedback }}"<br><span>{{ feedback.name }}</span></h4>
       </div>
     </div>
 
@@ -372,7 +378,7 @@ We provide fresh modern cuisine and beverages in a unique environment with frien
                     <h2 class="section-heading">FEEDBACK</h2>
                     <hr class="primary">
                     <div class="col-lg-6 text-center">
-                        <form class="form" action="index.php" method="post" enctype="multipart/form-data">
+                        <form class="form" action="{% url 'feedback' }" method="post" enctype="multipart/form-data">
                             <input type="text" id="name" name="name" maxlength="30" class="form-control" style="text-transform: capitalize;"  placeholder="Your Name" required><br>
 
                             <input type="email" id="email" name="email" class="form-control" placeholder="Your Email" required><br>
